@@ -31,4 +31,5 @@ export default defineConfig({
          provider: "local",
       },
    },
+   base: "/reviewers/",
 });
