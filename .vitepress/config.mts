@@ -8,14 +8,22 @@ export default defineConfig({
       // https://vitepress.dev/reference/default-theme-config
       nav: [
          { text: "Home", link: "/" },
-         { text: "Examples", link: "/markdown-examples" },
+         { text: "Get Started", link: "/subjects/" },
       ],
       sidebar: [
+         {
+            text: "Index",
+            link: "/subjects/index",
+         },
          {
             text: "CS 201A (Data Structures and Algorithms)",
             link: "/subjects/cs201a",
          },
       ],
+      editLink: {
+         pattern: "https://github.com/kylehue/reviewers/tree/main/:path",
+         text: "Suggest changes to this page",
+      },
       socialLinks: [
          { icon: "github", link: "https://github.com/kylehue/reviewers" },
       ],

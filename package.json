@@ -2,9 +2,11 @@
   "scripts": {
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
-    "docs:preview": "vitepress preview"
+    "docs:preview": "vitepress preview",
+    "docs:spell": "cspell \"subjects/**/*.md\""
   },
   "devDependencies": {
+    "cspell": "^8.4.1",
     "vitepress": "^1.0.0-rc.44"
   }
 }

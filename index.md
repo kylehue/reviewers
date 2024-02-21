@@ -5,17 +5,24 @@ layout: home
 hero:
   name: "Reviewers"
   text: "Compilation of reviewers from a variety of subjects."
+  tagline: "Compilation of reviewers from a variety of subjects."
   actions:
     - theme: brand
-      text: View Reviewers
-      link: /subjects/cs201a
+      text: Get Started
+      link: /subjects/
+    - theme: alt
+      text: View on GitHub
+      link: https://github.com/kylehue/reviewers
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: All-in-One Access
+    details: Gain easy access to a multitude of subjects and topics effortlessly.
+    icon: 📚
+  - title: Precise Pointers
+    details: Straightforward and simplified.
+    icon: 🎯
+  - title: Practice Quizzes
+    details: Enhance your knowledge and skills with interactive practice problems and quizzes.
+    icon: 💭
 ---
 
