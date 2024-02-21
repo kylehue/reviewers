@@ -2,4 +2,4 @@
 
 Compilation of reviewers from a variety of subjects.
 
-[Go to reviewers](https://github.com/kylehue/reviewers)
+[Go to reviewers](https://kylehue.github.io/reviewers/)

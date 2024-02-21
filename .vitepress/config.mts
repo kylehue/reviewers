@@ -17,7 +17,7 @@ export default defineConfig({
          },
          {
             text: "CS 201A (Data Structures and Algorithms)",
-            link: "/subjects/cs201a",
+            link: "/subjects/cs201a/",
          },
       ],
       editLink: {
