@@ -32,4 +32,12 @@ export default defineConfig({
       },
    },
    base: "/reviewers/",
+   head: [
+      // [
+      //    "script",
+      //    {
+      //       src: "https://cdn.tailwindcss.com",
+      //    },
+      // ],
+   ],
 });

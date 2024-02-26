@@ -1,5 +1,12 @@
 # CS 201A (Data Structures and Algorithms)
 
+<script setup>
+import { questions } from "./questions";
+
+</script>
+
+<Quiz :questions="questions"></Quiz>
+
 ## Prelim
 
 ### Data Structure
@@ -262,5 +269,3 @@ for each token in infixExpression:
 while stack is not empty:
    pop token from stack and prepend it to prefix expression
 ```
-
-
