@@ -1,12 +1,5 @@
 # CS 201A (Data Structures and Algorithms)
 
-<script setup>
-import { questions } from "./questions";
-
-</script>
-
-<Quiz :questions="questions"></Quiz>
-
 ## Prelim
 
 ### Data Structure
@@ -269,3 +262,143 @@ for each token in infixExpression:
 while stack is not empty:
    pop token from stack and prepend it to prefix expression
 ```
+
+## Midterm
+
+### Queue
+- An n-ordered list in which all insertions take place at one end, the **rear**, while all deletions take place at the other end, the **front**.
+- It is an example of a linear data structure.  
+- Has a First-In, First-Out (FIFO) structure where elements can only be added to the rear of the queue and removed from the front of the queue.
+- It has two main operations, enqueue for insertion and dequeue for deletion.  
+
+::: details Queue Operations
+- `enqueue(new-item: item-type)` - Adds an item onto the end of the queue.
+- `dequeue()` - Removes the item from the front of the queue.
+- `front(): item-type` - Returns the item at the front of the queue.
+- `back()`Returns the item at the front of the queue.
+- `is-empty(): Boolean` - True if no more items can be dequeued and there is no front item.
+- `is-full(): Boolean` - True if no more items can be enqueued.
+- `push(newElement)` - Pushes a new element on to the end of the queue.
+- `pop()` - Removes (but does not return) the element at the front of the queue
+- `get-size(): Integer` - Returns the number of elements in the queue
+:::
+
+### Array Implementation of a Queue
+- Insertion at the rear of the array is constant time.
+- Removal from the front is linear time.
+- Removal from the rear of the array is constant time.
+- Insertion at the front is linear time.
+
+> A circular array that is filled to capacity would require half the storage of a single-linked list to store the same number of elements.
+
+### Linked List Implementation of a Queue
+- Linked list implementations require more storage because of the extra space required for the links. Each node for a single-linked list would store a total of two references. Each node for a double-linked list would store a total of three references.
+
+### Linked List
+- A linear data structure, in which the elements are not stored at contiguous memory locations.
+- The elements in a linked list are linked using pointers.
+- A linked list consists of nodes where each node contains a data field and a reference(link) to the next node in the list.
+
+### Types of Linked List
+1. Singly Linked List
+2. Doubly Linked List
+3. Circular Linked List
+
+### Singly Linked List
+- Most common form of a Linked List where each node contains a data field and a single pointer to the next node in the list.
+- The reference to the first node is called the **HEAD**.
+- The pointer *(AKA the reference or link)* field contained in the node is used to traverse to the next node and to its next node and so on till we reach a node that points to NULL. This is the last node in the list.
+- Can only be traversed in one and only one direction i.e. from head to the last node. No way to go backwards.
+
+### Doubly Linked List
+- A linked data structure that consists of a set of sequentially linked records called nodes.
+- Each node contains two fields, called links, that are references to the previous and to the next node in the sequence of nodes.
+
+### Circular Linked List
+- A linked list where all nodes are connected to form a circle.
+- There is no NULL at the end.
+- A circular linked list can be a singly circular linked list or doubly circular linked list.
+
+### Bubble Sort
+- Simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in the wrong order.
+
+::: details Bubble Sort Animation
+<img src="./images/bubble-sort.gif" style="width: 100%" />
+:::
+
+### Selection Sort
+- Simple and efficient sorting algorithm that works by repeatedly selecting the smallest (or largest) element from the unsorted portion of the list and moving it to the sorted portion of the list.
+
+::: details Selection Sort Animation
+<img src="./images/selection-sort.gif" style="width: 100%" />
+:::
+
+### Insertion Sort
+- Builds the final sorted array one item at a time by comparisons.
+
+::: details Insertion Sort Animation
+<img src="./images/insertion-sort.gif" style="width: 100%" />
+:::
+
+### Merge Sort
+- A divide and conquer algorithm.
+- Divides input array into two halves, calls itself for the two halves and then merges the two sorted halves.
+- It uses a merge function to merge two halves. The merge(arr, l, m, r) is a key process that assumes that arr[l...m] and arr[m+1...r] are sorted and merges the two sorted sub-arrays into one.
+- The time complexity of Merge Sort is O(nLogn) in all 3 cases; worst, average and best as merge sort always divides the array into two halves and take linear time to merge two halves.
+- Merge sort organize array elements by recursively dividing the set into two halves until the size becomes 1. Once the size becomes 1, the merge processes come into action and start merging arrays back till the complete array is merged.
+
+::: details Merge Sort Animation
+<img src="./images/merge-sort.gif" style="width: 100%" />
+:::
+
+### Quick Sort
+- A divide and conquer algorithm.
+- It picks an element as pivot and partitions the given array around the picked pivot.
+
+### Different ways to pick a pivot in Quick Sort
+1. Always pick the first element as a pivot.
+2. Always pick the last element as the pivot (implemented below)
+3. Pick a random element as pivot.
+4. Pick median as a pivot.
+
+> The key process in quick sort is a partition(). The target of partitions is, given an array and an element x of an array as the pivot, put x at its correct position in a sorted array and put all smaller elements (smaller than x) before x, and put all greater elements (greater than x) after x. All this should be done in linear time.
+
+### Quick Sort Time Complexity
+- Best Case: `O(nLogn)` - The best case occurs when the partition process always picks the middle element as pivot. Following is recurrence for the best case.
+- Average Case: `O(nLogn)` - We can get an idea of average-case by considering the case when partition, for instance,  O(n/9) elements in one set and O(9n/10) elements in another set. 
+- Worst Case: `O(n^2)` - The worst case occurs when the partition process always picks the greatest or smallest element as pivot. If we consider the above partition strategy where the last element is always picked as a pivot, the worst case would occur when the array is already sorted in increasing or decreasing order.
+
+::: details Quick Sort Animation
+<img src="./images/quick-sort.gif" style="width: 100%" />
+:::
+
+### Bin/Bucket Sort
+- Bin, also referred to as Bucket Sort runs in linear time on average.
+- Like Counting Sort, bucket Sort is fast because it considers something about the input.
+- Bucket Sort considers that the input is generated by a random process that distributes elements uniformly over the intervalμ=[0,1].
+
+### Bin/Bucket Sort Formula
+### `(current_value * array_length) / (array_max_value + 1)`
+
+### Bin/Bucket Sort Algorithm
+1. Partition μ into n non-overlapping intervals called buckets.
+2. Puts each input number into its buckets
+3. Sort each bucket using a simple algorithm, e.g. Insertion Sort and then
+4. Concatenate the sorted lists.
+
+> Bucket Sort considers that the input is an n element array A and that each element A [i] in the array satisfies 0≤A [i] <1.
+> The code depends upon an auxiliary array B [0....n-1] of linked lists (buckets) and considers that there is a mechanism for maintaining such lists.
+
+::: details Bucket Sort Animation
+<img src="./images/bucket-sort.gif" style="width: 100%" />
+:::
+
+### Radix Sort
+- One of the sorting algorithms used to sort a list of integer numbers in order.
+- In radix sort algorithm, a list of integer numbers is sorted based on the digits of individual numbers.
+- Sorting is performed from the least significant digit to the most significant digit.
+- Not comparison based.
+
+::: details Radix Sort Animation
+<img src="./images/radix-sort.gif" style="width: 100%" />
+:::
