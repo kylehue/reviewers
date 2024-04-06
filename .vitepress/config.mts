@@ -19,6 +19,10 @@ export default defineConfig({
             text: "CS 201A (Data Structures and Algorithms)",
             link: "/subjects/cs201a/",
          },
+         {
+            text: "ITE 005 (Operating Systems)",
+            link: "/subjects/ite005/",
+         },
       ],
       editLink: {
          pattern: "https://github.com/kylehue/reviewers/tree/main/:path",
@@ -41,4 +45,7 @@ export default defineConfig({
       // ],
    ],
    ignoreDeadLinks: true,
+   markdown: {
+      math: true,
+   },
 });

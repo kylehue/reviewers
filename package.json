@@ -6,9 +6,21 @@
     "docs:spell": "cspell \"subjects/**/*.md\""
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.19",
     "cspell": "^8.4.1",
+    "postcss": "^8.4.38",
     "sass": "^1.71.1",
     "tailwindcss": "^3.4.1",
     "vitepress": "^1.0.0-rc.44"
+  },
+  "dependencies": {
+    "markdown-it": "^14.1.0",
+    "markdown-it-mathjax3": "^4.3.2"
+  },
+  "postcss": {
+    "plugins": {
+      "tailwindcss": {},
+      "autoprefixer": {}
+    }
   }
 }
