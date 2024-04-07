@@ -1,4 +1,7 @@
 import { defineConfig } from "vitepress";
+import MarkdownMath from "markdown-it-texmath";
+
+const customElements = ["eq", "eqn"];
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -37,15 +40,29 @@ export default defineConfig({
    },
    base: "/reviewers/",
    head: [
-      // [
-      //    "script",
-      //    {
-      //       src: "https://cdn.tailwindcss.com",
-      //    },
-      // ],
+      [
+         "link",
+         {
+            rel: "stylesheet",
+            href: "https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css",
+            integrity:
+               "sha384-wcIxkf4k558AjM3Yz3BBFQUbk/zgIYC2R0QpeeYb+TwlBVMrlgLqwRjRtGZiK7ww",
+            crossorigin: "anonymous",
+         },
+      ],
    ],
    ignoreDeadLinks: true,
    markdown: {
-      math: true,
+      math: false,
+      config(md) {
+         md.use(MarkdownMath);
+      },
+   },
+   vue: {
+      template: {
+         compilerOptions: {
+            isCustomElement: (tag) => customElements.includes(tag),
+         },
+      },
    },
 });
