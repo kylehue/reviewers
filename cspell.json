@@ -1,5 +1,40 @@
 {
    "version": "0.2",
    "language": "en",
-   "words": ["spliterator"]
+   "words": [
+      "spliterator",
+      "spinlock",
+      "spinlocks",
+      "spinlocking",
+      "wakeup",
+      "uniprocessor",
+      "interprocess",
+      "posix",
+      "stbr",
+      "stlr",
+      "ptbr",
+      "ptlr",
+      "asid",
+      "struct",
+      "lotsfree",
+      "desfree",
+      "minfree",
+      "mbytes",
+      "prepage",
+      "prepaged",
+      "prepaging",
+      "Belady",
+      "pageout",
+      "pagein",
+      "lgroup",
+      "lgroups",
+      "numa",
+      "slowscan",
+      "fastscan",
+      "scanrate",
+      "vfork"
+   ],
+   "names": [
+      "Belady"
+   ]
 }

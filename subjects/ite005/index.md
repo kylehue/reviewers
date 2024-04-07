@@ -62,7 +62,7 @@ function process() {
 - Entry section disables interrupts
 - Exit section enables interrupts
 
-### Sofware Solution
+### Software Solution
 - 2-process solution
 - Assumes that the **load** and **store** machine-language instructions are atomic (meaning they can't be interrupted).
 - The 2 processes share 1 variable — `int turn`
@@ -157,7 +157,7 @@ turn = 0; // Set to 0 to indicate that it's process 0's turn
 ### Correctness of Peterson's Solution
 - Mutual exclusion is preserved
   - $P_{i}$ enters critical section only if `turn == i` or `flag[j] == false`.
-- Progress and Bounded-Waiting requiremets are satisfied.
+- Progress and Bounded-Waiting requirements are satisfied.
 
 ### Peterson's Solution and Modern Architecture
 - Although useful for demonstrating an algorithm, Peterson's Solution is not guaranteed to work on modern architectures.
@@ -176,7 +176,7 @@ turn = 0; // Set to 0 to indicate that it's process 0's turn
   - **Weakly Ordered** - Where memory modification of one processor may not be immediately visible to all other processors.
 
 ### Memory Barrier Instructions
-- When a memory barrier instruction is performed, the system ensures that all loads and stores are completed before any subsequent load or store oparations are performed.
+- When a memory barrier instruction is performed, the system ensures that all loads and stores are completed before any subsequent load or store operations are performed.
 - Therefore, even if instructions were reordered, the memory barrier ensures that the store operations are completed in memory and visible to other processors before future load or store operations are performed.
 
 ### Synchronization Hardware
@@ -221,12 +221,12 @@ releaseLock();
 :::
 
 ### Semaphore
-- Synchronization tool that provides more sophisticated ways *(than Mutex Locks)* for processes to synchronize their activies.
+- Synchronization tool that provides more sophisticated ways *(than Mutex Locks)* for processes to synchronize their activities.
 - Semaphore $S$ - integer variable
 - Can only be accessed via 2 indivisible *(or atomic)* operations
   1. `wait()` - originally called `P()`
   2. `signal()` - originally called `V()`
-- **Counting Sempahore** is an integer value that can range over an unrestricted domain.
+- **Counting Semaphore** is an integer value that can range over an unrestricted domain.
 - **Binary Semaphore** is an integer value the can range only between 0 and 1.
 - Same as mutex lock.
 - Can implement a counting semaphore $S$ as a binary semaphore.
@@ -325,7 +325,7 @@ Indefinite waiting is an example of a liveness failure.
 - Several variation of how readers and writers are considered, and all involve some form of priorities.
 - Shared Data:
   - Data set
-  - Sempahore `rw_mutex` initialized to 1.
+  - Semaphore `rw_mutex` initialized to 1.
   - Semaphore `mutex` initialized to 1.
   - Integer `read_count` initialized to 0.
 
@@ -1189,7 +1189,7 @@ $$
 - Associate time of last use with each page
 - 12 faults - better than FIFO but worse than OPT
 - Generally good algorithm and frequently used
-- LRU is another example of stack algorithms; thus it does not suffer from Belady’s Anomaly
+- LRU is another example of stack algorithms; thus it does not suffer from Belady's Anomaly
 
 ### LRU Algorithm Implementation
 - Time-counter implementation
