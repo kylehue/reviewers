@@ -3,26 +3,14 @@
 layout: home
 
 hero:
-  name: "Reviewers"
-  text: "Compilation of reviewers from a variety of subjects."
-  tagline: "Compilation of reviewers from a variety of subjects."
+  name: "📚"
+  text: "Compilation of reviewers from a variety of subjects"
+  tagline: "i have no clue what to put here"
   actions:
     - theme: brand
-      text: Get Started
+      text: Subjects
       link: /subjects/
     - theme: alt
       text: View on GitHub
       link: https://github.com/kylehue/reviewers
-
-features:
-  - title: All-in-One Access
-    details: Gain easy access to a multitude of subjects and topics effortlessly.
-    icon: 📚
-  - title: Precise Pointers
-    details: Straightforward and simplified.
-    icon: 🎯
-  - title: Practice Quizzes
-    details: Enhance your knowledge and skills with interactive practice problems and quizzes.
-    icon: 💭
 ---
-

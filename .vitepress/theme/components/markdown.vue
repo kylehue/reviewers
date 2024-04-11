@@ -17,7 +17,7 @@ const renderedMarkdown = ref("");
 
 const renderMarkdown = () => {
    const markdownContent = getContent();
-   renderedMarkdown.value = md.render(markdownContent.replace(/\\n/, "\n"));
+   renderedMarkdown.value = md.render(markdownContent);
 };
 
 const getContent = () => {

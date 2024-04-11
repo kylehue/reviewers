@@ -11,7 +11,7 @@ export default defineConfig({
       // https://vitepress.dev/reference/default-theme-config
       nav: [
          { text: "Home", link: "/" },
-         { text: "Get Started", link: "/subjects/" },
+         { text: "Subjects", link: "/subjects/" },
       ],
       sidebar: [
          {
@@ -26,6 +26,10 @@ export default defineConfig({
             text: "ITE 005 (Operating Systems)",
             link: "/subjects/ite005/",
          },
+         {
+            text: "MATH 015 (Symbolic Logic)",
+            link: "/subjects/math015/",
+         },
       ],
       editLink: {
          pattern: "https://github.com/kylehue/reviewers/tree/main/:path",
@@ -37,6 +41,7 @@ export default defineConfig({
       search: {
          provider: "local",
       },
+      outline: "deep",
    },
    base: "/reviewers/",
    head: [

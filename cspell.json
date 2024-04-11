@@ -32,9 +32,11 @@
       "slowscan",
       "fastscan",
       "scanrate",
-      "vfork"
-   ],
-   "names": [
-      "Belady"
+      "vfork",
+      "ponens",
+      "tollens",
+      "inferencing",
+      "uncogent",
+      "autoplay"
    ]
 }
