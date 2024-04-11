@@ -273,7 +273,7 @@ $$
             & P \\
             \end{align*}
          }{
-            \therefore P
+            \therefore Q
          }
          $$
       </Markdown>
