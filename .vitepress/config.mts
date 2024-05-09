@@ -30,6 +30,10 @@ export default defineConfig({
             text: "MATH 015 (Symbolic Logic)",
             link: "/subjects/math015/",
          },
+         {
+            text: "PHYS 001C (Physics for Engineers)",
+            link: "/subjects/phys001c/",
+         },
       ],
       editLink: {
          pattern: "https://github.com/kylehue/reviewers/tree/main/:path",
@@ -58,7 +62,7 @@ export default defineConfig({
    ],
    ignoreDeadLinks: true,
    markdown: {
-      math: false,
+      math: true,
       config(md) {
          md.use(MarkdownMath);
       },
