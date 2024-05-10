@@ -3,12 +3,24 @@
 ## Formulas
 
 ### Kinematics Formulas
+
+#### Horizontal
 $$
 \begin{align*}
 a &= \frac{v_f - v_i}{t} \\
 v_f &= v_i + at \\
 x_f &= x_i + v_i t + \frac{1}{2} at^2 \\
 v_f^2 &= v_i^2 + 2ad \\
+\end{align*}
+$$
+
+#### Vertical (Free Fall)
+$$
+\begin{align*}
+g &= -9.8\frac{m}{s^2} \\
+t &= \frac{v_f - v_i}{g} \\
+y_f &= y_i + v_i t + \frac{1}{2} gt^2 \\
+v_f^2 &= v_i^2 + 2gh \\
 \end{align*}
 $$
 
@@ -33,7 +45,7 @@ $$
 If $y_i > y_f$ and $\theta = 0$:
 $$
 \begin{align*}
-\text{Cliff height} &= \frac{1}{2} at^2 \\
+\text{Cliff height} &= \frac{1}{2} gt^2 \\
 \text{Range} &= v_x t \\
 \end{align*}
 $$
@@ -42,8 +54,7 @@ If $y_i > y_f$ and $\theta \neq 0$:
 $$
 \begin{align*}
 h &= \text{Cliff height} \\
-h &= \frac{1}{2}at^2-v_{y_i}t
-\text{ where } t = \text{Time of flight} \\
+h &= v_{y_i}t + \frac{1}{2}gt^2 \\
 H &= \text{Max height relative to cliff height} \\
 H &= \frac{v^2 sin^2 \theta}{2g} \\
 \text{Time to reach } H &= \frac{v sin \theta}{g} \\
@@ -57,19 +68,25 @@ $$
 ### Newton's Law of Motion Formulas
 
 $$
-\begin{align*}
-\sum{\vec{F}} &= ma \\
-\sum{\vec{F}} &= 0 \gray{\text{ (First Condition of Equilibrium)}} \\
-\end{align*}
+\vec{F} = ma
+$$
+
+#### First Condition of Equilibrium
+
+$$
+\sum{\vec{F}} = 0
 $$
 
 ### Torque Formulas
 
 $$
-\begin{align*}
-\tau &= \vec{F}r sin \theta \\
-\sum{\tau} &= 0 \gray{\text{ (Second Condition of Equilibrium)}} \\
-\end{align*}
+\tau = \vec{F}r sin \theta
+$$
+
+#### Second Condition of Equilibrium
+
+$$
+\sum{\tau} = 0
 $$
 
 ### Work, Power, and Energy Formulas
@@ -326,8 +343,8 @@ $$
 \begin{align*}
 g &= -9.8\frac{m}{s^2} \\
 t &= \frac{v_f - v_i}{g} \\
-y &= v_i t + \frac{1}{2} gt^2 \\
-v_f^2 &= v_i^2 + 2gy \\
+y_f &= y_i + v_i t + \frac{1}{2} gt^2 \\
+v_f^2 &= v_i^2 + 2gh \\
 \end{align*}
 $$
 
@@ -367,7 +384,7 @@ $$
 If $y_i > y_f$ and $\theta = 0$:
 $$
 \begin{align*}
-\text{Cliff height} &= \frac{1}{2} at^2 \\
+\text{Cliff height} &= \frac{1}{2} gt^2 \\
 \text{Range} &= v_x t \\
 \end{align*}
 $$
@@ -376,8 +393,7 @@ If $y_i > y_f$ and $\theta \neq 0$:
 $$
 \begin{align*}
 h &= \text{Cliff height} \\
-h &= \frac{1}{2}at^2-v_{y_i}t
-\text{ where } t = \text{Time of flight} \\
+h &= v_{y_i}t + \frac{1}{2}gt^2 \\
 H &= \text{Max height relative to cliff height} \\
 H &= \frac{v^2 sin^2 \theta}{2g} \\
 \text{Time to reach } H &= \frac{v sin \theta}{g} \\
@@ -390,7 +406,7 @@ $$
 
 ### Newton's Law of Motion
 
-#### Intertia
+#### Inertia
 - Tendency of an object to resist changes in its velocity.
 
 #### Force $(F)$
@@ -402,7 +418,7 @@ $$
 2. Field Forces - Doesn't involve physical contact.
 
 #### Frictional Force
-- The force resisting the relative motion of solid surfaces, fluid layers, or material elements sliding againts each other.
+- The force resisting the relative motion of solid surfaces, fluid layers, or material elements sliding against each other.
 - Coefficient of Friction - The number which represents the friction between two surfaces.
 - Static Friction - Keeps a stationary object at rest.
 - Kinetic Friction - Slows down a moving object.
@@ -441,7 +457,7 @@ $$
 - The sum of all unbalanced forces acting on a body is proportional to the acceleration experienced by the body.
 
 $$
-\sum{F} = ma
+\vec{F} = ma
 $$
 
 #### Law of Interaction
