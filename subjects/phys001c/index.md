@@ -68,7 +68,20 @@ $$
 ### Newton's Law of Motion Formulas
 
 $$
-\vec{F} = ma
+\begin{align*}
+F &= ma \\
+W &= mg \\
+F_{friction} &= \mu_s F_N \\
+\mu_s &> \mu_k \\
+\end{align*}
+$$
+
+If on inclined surface:
+$$
+\begin{align*}
+F_g &= mg sin \theta \\
+F_N &= mg cos \theta \\
+\end{align*}
 $$
 
 #### First Condition of Equilibrium
