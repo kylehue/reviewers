@@ -106,7 +106,7 @@ $$
 $$
 \begin{align*}
 W &= \vec{F} \Delta \vec{r} cos \theta \\
-\text{KE} &= \frac{1}{2}mv^2 \\
+KE &= \frac{1}{2}mv^2 \\
 P &= \frac{\Delta W}{\Delta t} = \frac{F \vec{r}}{t} \\
 W &= \vec{F} \Delta \vec{r} = (mg)(y_f - y_i) \\
 W &= KE_f - KE_i = \Delta KE \\
@@ -115,71 +115,76 @@ $$
 
 ### Impulse and Momentum Formulas
 
+#### Momentum
+
 $$
 \begin{align*}
 \vec{p} &= m \vec{v} \\
-\sum{F} &= \frac{d \vec{p}}{dt} \\
-I &= p_f - p_i \\
-I &= m(v_f - v_i) \\
+F &= \frac{dp}{dt} \\
+\end{align*}
+$$
+
+#### Impulse
+
+$$
+\begin{align*}
+I &= F \Delta t \\
+F \Delta t &= m \Delta v \\
+\end{align*}
+$$
+
+#### Conservation of Linear Momentum
+
+$$
+\begin{align*}
 p_{before} &= p_{after} \\
-m_1 v_1 + m_2 v_2 &= m_1 v_1' + m_2 v_2'
+m_1 v_1 + m_2 v_2 &= m_1 v_1' + m_2 v_2' \\
+v_1 + v_1' &= v_2 + v_2' \\
 \end{align*}
 $$
 
 ### Fluid Statics Formulas
+
 $$
 \begin{align*}
 
-\begin{align*}
-
-\begin{align*}
-\rho &= \frac{m}{V} \\
-\end{align*}
-&\text{ where }
+\rho &= \frac{m}{V}
+\text{ where }
 \begin{align*}
 \rho &= \text{density} \\
 m &= \text{mass} \\
 V &= \text{volume} \\
 \end{align*} \\
 
-\begin{align*}
-P &= \frac{F}{A} \\
-\end{align*}
-&\text{ where }
+P &= \frac{F}{A}
+\text{ where }
 \begin{align*}
 P &= \text{Pressure} \\
 F &= \text{Force} \\
 A &= \text{Area} \\
 \end{align*} \\
 
-\begin{align*}
-P &= \rho gh \\
-\end{align*}
-&\text{ where }
+P &= \rho gh
+\text{ where }
 \begin{align*}
 g &= 9.8 \frac{m}{s^2} \\
 h &= \text{Height} \\
-\end{align*}
-
 \end{align*} \\
 
-\begin{align*}
-\begin{align*}
-P_{out} = P_{in} \\
-\end{align*}
-&\text{ or }
-\begin{align*}
-\frac{F_{out}}{A_{out}} = \frac{F_{in}}{A_{in}}
-\end{align*}
-\end{align*} \\
+P_{out} &= P_{in}
+\text{ or }
+\frac{F_{out}}{A_{out}} = \frac{F_{in}}{A_{in}} \\
 
-\begin{align*}
 F_B &= mg \\
-F_B &= \rho Vg \\
-F_B &= W_{air} - W_{water} \\
+F_B &= \rho Vg
+\text{ where }
+\begin{align*}
+\rho &= \text{density of fluid} \\
+V &= \text{volume of object} \\
 \end{align*} \\
+F_B &= W_{air} - W_{water} \\
 
-\text{Specific Gravity} = \frac{\rho_{object}}{\rho_{fluid}} \\
+\text{Specific Gravity} &= \frac{\rho_{object}}{\rho_{fluid}} \\
 
 \end{align*}
 $$
@@ -196,13 +201,50 @@ v &= \text{average speed} \\
 \end{align*} \\
 
 J_{in} &= J_{out} \text{ or } A_1 v_1 = A_2 v_2 \\
-
 P_2 &= P_1 + \rho gh + \frac{1}{2} \rho v^2 \\
-
 v &= \sqrt{2gh} \\
 
 \end{align*}
 $$
+
+### Fluid Constants
+$$
+\begin{align*}
+1 Pa &= 1 \frac{N}{m^2} \\
+1 kPa &= 1000 Pa \\
+1 atm &= 101.3 kPa \\
+\end{align*}
+$$
+
+::: details Densities of Some Common Subtances
+| Substance     | $\rho (\frac{kg}{m^3})$ |
+| ------------- | ----------------------- |
+| Hydrogen Gas  | $8.99 \times 10^{-2}$   |
+| Helium Gas    | $1.79 \times 10^{-1}$   |
+| Air           | $1.29$                  |
+| Oxygen Gas    | $1.43$                  |
+| Ethyl Alcohol | $0.81 \times 10^3$      |
+| Ice           | $0.92 \times 10^3$      |
+| Fresh Water   | $1.00 \times 10^3$      |
+| Sea Water     | $1.03 \times 10^3$      |
+| Aluminum      | $2.70 \times 10^3$      |
+| Iron          | $7.86 \times 10^3$      |
+| Copper        | $8.92 \times 10^3$      |
+| Silver        | $10.5 \times 10^3$      |
+| Lead          | $11.3 \times 10^3$      |
+| Mercury       | $13.6 \times 10^3$      |
+| Gold          | $19.3 \times 10^3$      |
+:::
+
+::: details Common Volume Formulas
+| Shape              | Volume Formula        |
+| ------------------ | --------------------- |
+| Cylinder           | $\pi r^2 h$           |
+| Cube               | $a^3$                 |
+| Rectangular cuboid | $lwh$                 |
+| Sphere             | $\frac{4}{3} \pi r^3$ |
+| Pyramid            | $\frac{1}{3} lwh$     |
+:::
 
 ### Electrostatics Formulas
 $$
@@ -553,7 +595,6 @@ $$
 $$
 \begin{align*}
 \vec{p} &= m \vec{v} \\
-\sum{F} &= \frac{d \vec{p}}{dt} \\
 \end{align*}
 $$
 
@@ -562,8 +603,8 @@ $$
 
 $$
 \begin{align*}
-I &= p_f - p_i \\
-I &= m(v_f - v_i) \\
+\sum{I} &= F \Delta t \\
+F \Delta t &= m \Delta v \\
 \end{align*}
 $$
 
@@ -644,7 +685,12 @@ $$
 $$
 \begin{align*}
 F_B &= mg \\
-F_B &= \rho Vg \\
+F_B &= \rho Vg
+\text{ where }
+\begin{align*}
+\rho &= \text{density of fluid} \\
+V &= \text{volume of object} \\
+\end{align*} \\
 F_B &= W_{air} - W_{water} \\
 \end{align*}
 $$
