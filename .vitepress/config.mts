@@ -23,10 +23,6 @@ export default defineConfig({
             link: "/subjects/cs201a/",
          },
          {
-            text: "ITE 005 (Operating Systems)",
-            link: "/subjects/ite005/",
-         },
-         {
             text: "MATH 015 (Symbolic Logic)",
             link: "/subjects/math015/",
          },
