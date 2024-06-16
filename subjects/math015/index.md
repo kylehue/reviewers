@@ -387,6 +387,33 @@ $$
          $$
       </Markdown>
    </div>
+   <div class="flex flex-auto flex-col items-center min-w-[30%]">
+      <span class="font-semibold">Absorption</span>
+      <Markdown class="w-fit">
+         $$
+         \frac{
+            P \rightarrow Q
+         }{
+            \therefore P \rightarrow (P \wedge Q)
+         }
+         $$
+      </Markdown>
+   </div>
+   <div class="flex flex-auto flex-col items-center min-w-[30%]">
+      <span class="font-semibold">Constructive Dilemma</span>
+      <Markdown class="w-fit">
+         $$
+         \frac{
+            \begin{align*}
+            & (P \rightarrow Q) \wedge (R \rightarrow S) \\
+            & P \vee R \\
+            \end{align*}
+         }{
+            \therefore Q \vee S
+         }
+         $$
+      </Markdown>
+   </div>
 </div>
 :::
 
