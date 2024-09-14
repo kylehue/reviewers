@@ -216,7 +216,7 @@ $$
 \end{align*}
 $$
 
-::: details Densities of Some Common Subtances
+::: details Densities of Some Common Substances
 | Substance     | $\rho (\frac{kg}{m^3})$ |
 | ------------- | ----------------------- |
 | Hydrogen Gas  | $8.99 \times 10^{-2}$   |
