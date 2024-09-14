@@ -1,8 +1,5 @@
 <template>
-   <Button
-      class="medium alt !p-3 w-fit h-fit m-0"
-      @click="toggleSpoilers"
-   >
+   <Button class="medium alt !p-3 w-fit h-fit m-0" @click="toggleSpoilers">
       <PhEye v-if="!isActive" :size="20"></PhEye>
       <PhEyeClosed v-else :size="20"></PhEyeClosed>
    </Button>
@@ -30,5 +27,3 @@ function toggleSpoilers() {
    }
 }
 </script>
-
-<style lang="scss" scoped></style>
