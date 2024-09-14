@@ -6,5 +6,15 @@
 }
 
 h4 {
-  margin-top: 24px !important;
+   margin-top: 24px !important;
+}
+
+.spoiler.active {
+   filter: blur(10px);
+   cursor: pointer;
+   user-select: none;
+}
+
+.spoiler.active:active {
+   filter: none;
 }

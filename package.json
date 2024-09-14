@@ -6,14 +6,19 @@
     "spell": "cspell \"subjects/**/*.md\""
   },
   "devDependencies": {
+    "@mdit/plugin-spoiler": "^0.13.1",
+    "@wekanteam/markdown-it-mermaid": "^0.6.4",
     "autoprefixer": "^10.4.19",
     "cspell": "^8.4.1",
+    "mermaid": "^10.9.1",
     "postcss": "^8.4.38",
     "sass": "^1.71.1",
     "tailwindcss": "^3.4.1",
-    "vitepress": "^1.0.0-rc.44"
+    "vitepress": "^1.0.0-rc.44",
+    "vitepress-plugin-mermaid": "^2.0.16"
   },
   "dependencies": {
+    "@phosphor-icons/vue": "^2.2.1",
     "katex": "^0.16.10",
     "markdown-it": "^14.1.0",
     "markdown-it-texmath": "^1.0.0"
