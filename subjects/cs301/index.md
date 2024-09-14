@@ -207,11 +207,13 @@ graph LR
    X(<span class="spoiler">Environment</span>)
    Y(<span class="spoiler">Boundaries and Interfaces</span>)
    
-   A ~~~~ _:::hidden
+   A ~~~~ _[ ]
    A -.-> B
    I --> B --> O
    O --> F --> I
    X ~~~~~ Y
+
+   style _ fill:none,stroke:none;
 ```
 
 - !!Inputs and Outputs!!
