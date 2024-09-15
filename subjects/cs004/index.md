@@ -1,6 +1,6 @@
 <FloatingButtonContainer>
-   <Scrambler tag="h3"></Scrambler>
    <SpoilerReveal></SpoilerReveal>
+   <Scrambler tag="h3"></Scrambler>
 </FloatingButtonContainer>
 
 # CS 004 (Networks and Communications)

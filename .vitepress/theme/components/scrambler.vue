@@ -6,7 +6,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, onBeforeUnmount } from "vue";
 import { PhShuffle, PhRepeat } from "@phosphor-icons/vue";
 import Button from "./button.vue";
 import { shuffleArray } from "../utils/common";
@@ -105,5 +105,13 @@ function initContent() {
 
 onMounted(() => {
    initContent();
+});
+
+onBeforeUnmount(() => {
+   unscramble();
+   sectionContentParents = [];
+   sectionContent = [];
+   listContentParents = [];
+   listContent = [];
 });
 </script>
