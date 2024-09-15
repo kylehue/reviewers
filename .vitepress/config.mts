@@ -22,8 +22,16 @@ export default withMermaid({
                link: "/subjects/index",
             },
             {
+               text: "CS 004 (Networks and Communications)",
+               link: "/subjects/cs004/",
+            },
+            {
                text: "CS 201A (Data Structures and Algorithms)",
                link: "/subjects/cs201a/",
+            },
+            {
+               text: "CS 301 (Software Engineering I)",
+               link: "/subjects/cs301/",
             },
             {
                text: "MATH 015 (Symbolic Logic)",
@@ -32,10 +40,6 @@ export default withMermaid({
             {
                text: "PHYS 001C (Physics for Engineers)",
                link: "/subjects/phys001c/",
-            },
-            {
-               text: "CS 301 (Software Engineering I)",
-               link: "/subjects/cs301/",
             },
          ],
          editLink: {
@@ -82,5 +86,5 @@ export default withMermaid({
    }),
    mermaid: {
       theme: "base",
-   }
+   },
 });

@@ -17,4 +17,5 @@ h4 {
 
 .spoiler.active:active {
    filter: none;
+   pointer-events: none;
 }
