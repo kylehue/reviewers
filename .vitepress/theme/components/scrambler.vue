@@ -16,7 +16,7 @@ const props = defineProps<{
 }>();
 
 let isScrambled = ref(false);
-let parent: HTMLElement | null = null;
+let contentParents: HTMLElement[] = [];
 let content: HTMLElement[][] = [];
 
 const toggleScramble = () => {
@@ -41,7 +41,7 @@ function scrambleSections() {
    let randomized = shuffleArray(Array.from(content.keys()));
    for (let index of randomized) {
       for (let j = 0; j < content[index].length; j++) {
-         parent?.appendChild(content[index][j]);
+         contentParents[index].appendChild(content[index][j]);
       }
    }
 }
@@ -51,12 +51,12 @@ function restoreOriginalOrder() {
    removeContent();
    for (let i = 0; i < content.length; i++) {
       for (let j = 0; j < content[i].length; j++) {
-         parent?.appendChild(content[i][j]);
+         contentParents[i].appendChild(content[i][j]);
       }
    }
 }
 
-onMounted(() => {
+function initContent() {
    let ungroupedContent = Array.from(
       document.querySelectorAll<HTMLElement>(props.tag)
    );
@@ -71,8 +71,11 @@ onMounted(() => {
          currentEl = currentEl.nextElementSibling as HTMLElement;
       }
       content.push(currentGroup);
+      contentParents.push(currentGroup[0].parentElement!);
    }
+}
 
-   parent = ungroupedContent[0].parentElement;
+onMounted(() => {
+   initContent();
 });
 </script>
