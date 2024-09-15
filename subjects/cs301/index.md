@@ -70,7 +70,7 @@
 
 ---
 
-### Software Engineering *vs* Computer Science *vs* System Engineering
+### !!Software Engineering!! *vs* !!Computer Science!! *vs* !!System Engineering!!
 - !!Computer Science!!
   - Focuses on theories and methods that underlie computer and software systems.
   - Theories such as data representation, automation, efficiency in coding and processes, as well as algorithms.
@@ -599,7 +599,7 @@ graph LR
 
 ---
 
-### Tangible *vs* Intangible Costs
+### !!Tangible!! *vs* !!Intangible Costs!!
 - !!Tangible Costs!!
   - Includes revenue that the system enables the organization to collect, such as increased sales.
 - !!Intangible Costs!!
