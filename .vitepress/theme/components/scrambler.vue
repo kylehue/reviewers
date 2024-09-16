@@ -1,12 +1,15 @@
 <template>
-   <Button class="medium alt !p-3 w-fit h-fit m-0" @click="toggleScramble">
+   <Button
+      class="medium alt !p-3 w-fit h-fit m-0"
+      @click="() => (isScrambled = !isScrambled)"
+   >
       <PhShuffle v-if="!isScrambled" :size="20"></PhShuffle>
       <PhRepeat v-else :size="20"></PhRepeat>
    </Button>
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted, onBeforeUnmount } from "vue";
+import { ref, computed, watch, onMounted, onBeforeUnmount } from "vue";
 import { PhShuffle, PhRepeat } from "@phosphor-icons/vue";
 import Button from "./button.vue";
 import { shuffleArray } from "../utils/common";
@@ -14,61 +17,76 @@ import { shuffleArray } from "../utils/common";
 const props = withDefaults(
    defineProps<{
       tag: keyof HTMLElementTagNameMap;
+      dividers?: (keyof HTMLElementTagNameMap)[];
       includeLists?: boolean;
    }>(),
    {
       includeLists: () => true,
+      dividers: () => [],
    }
 );
 
+let dividers = computed(() => new Set(props.dividers as string[]));
 let isScrambled = ref(false);
-let sectionContentParents: HTMLElement[] = [];
-let sectionContent: HTMLElement[][] = [];
-let listContentParents: HTMLElement[] = [];
-let listContent: HTMLElement[][] = [];
+let all: HTMLElement[][][] = [];
+let parentOfAll: HTMLElement | null = null;
+let allLists: [HTMLUListElement, HTMLLIElement[]][] = [];
 
-const toggleScramble = () => {
-   if (!isScrambled.value) {
-      scramble();
-   } else {
-      unscramble();
+watch(isScrambled, (v) => toggleScramble(v));
+
+function toggleScramble(doScramble: boolean) {
+   if (parentOfAll === null) {
+      console.warn(
+         "Couldn't scramble content because the main parent is not found."
+      );
+      return;
    }
-   isScrambled.value = !isScrambled.value;
-};
 
-function removeContent() {
-   for (let i = 0; i < sectionContent.length; i++) {
-      for (let j = 0; j < sectionContent[i].length; j++) {
-         sectionContent[i][j].remove();
+   // Prepare scrambling/unscrambling by removing all elements
+   for (let sections of all) {
+      for (let section of sections) {
+         for (let element of section) {
+            element.remove();
+         }
       }
    }
-}
 
-function scramble() {
-   removeContent();
-   for (let i of shuffleArray(Array.from(sectionContent.keys()))) {
-      for (let j = 0; j < sectionContent[i].length; j++) {
-         sectionContentParents[i].appendChild(sectionContent[i][j]);
+   // Re-add all elements
+   for (let division of all) {
+      if (doScramble) {
+         // If the first section in division is a divider element, always
+         // make it the first section.
+         if (dividers.value.has(division[0]?.[0]?.tagName.toLowerCase())) {
+            division = [
+               division[0],
+               ...shuffleArray(Array.from(division.slice(1))),
+            ];
+         } else {
+            division = shuffleArray(Array.from(division));
+         }
       }
-   }
-   for (let i of shuffleArray(Array.from(listContent.keys()))) {
-      let shuffledJ = shuffleArray(Array.from(listContent[i].keys()));
-      for (let j of shuffledJ) {
-         listContentParents[i].appendChild(listContent[i][j]);
-      }
-   }
-}
 
-function unscramble() {
-   removeContent();
-   for (let i = 0; i < sectionContent.length; i++) {
-      for (let j = 0; j < sectionContent[i].length; j++) {
-         sectionContentParents[i].appendChild(sectionContent[i][j]);
+      for (let section of division) {
+         for (let element of section) {
+            parentOfAll.appendChild(element);
+         }
       }
    }
-   for (let i = 0; i < listContent.length; i++) {
-      for (let j = 0; j < listContent[i].length; j++) {
-         listContentParents[i].appendChild(listContent[i][j]);
+
+   // What about the lists?
+   if (props.includeLists) {
+      if (doScramble) {
+         for (let [parent, children] of allLists) {
+            for (let li of shuffleArray(Array.from(children))) {
+               parent.appendChild(li);
+            }
+         }
+      } else {
+         for (let [parent, children] of allLists) {
+            for (let li of children) {
+               parent.appendChild(li);
+            }
+         }
       }
    }
 }
@@ -77,6 +95,9 @@ function initContent() {
    let rawSections = Array.from(
       document.querySelectorAll<HTMLElement>(`.vp-doc ${props.tag}`)
    );
+
+   // Get all sections first
+   let undividedSections: HTMLElement[][] = [];
    for (let i = 0; i < rawSections.length; i++) {
       let currentGroup: HTMLElement[] = [rawSections[i]];
       let currentEl = rawSections[i];
@@ -87,18 +108,41 @@ function initContent() {
          currentGroup.push(currentEl.nextElementSibling as HTMLElement);
          currentEl = currentEl.nextElementSibling as HTMLElement;
       }
-      sectionContent.push(currentGroup);
-      sectionContentParents.push(currentGroup[0].parentElement!);
+      undividedSections.push(currentGroup);
    }
 
+   // Then get the divided sections
+   let currentDivison: HTMLElement[][] = [];
+   let currentSection: HTMLElement[] = [];
+   for (let section of undividedSections) {
+      for (let i = 0; i < section.length; i++) {
+         let element = section[i];
+
+         // Split if element is a divider
+         if (dividers.value.has(element.tagName.toLowerCase())) {
+            currentDivison.push(currentSection);
+            all.push(currentDivison);
+            currentDivison = [];
+            currentSection = section.slice(i);
+            break;
+         }
+
+         currentSection.push(element);
+      }
+
+      currentDivison.push(currentSection);
+      currentSection = [];
+   }
+
+   if (currentDivison.length) all.push(currentDivison);
+
+   parentOfAll = all[0]?.[0]?.[0].parentElement;
+
+   // Lastly, get all lists
    if (props.includeLists) {
-      let rawLists = Array.from(
-         document.querySelectorAll<HTMLElement>(".vp-doc ul")
-      );
-      for (let i = 0; i < rawLists.length; i++) {
-         let currentGroup = Array.from(rawLists[i].children) as HTMLElement[];
-         listContent.push(currentGroup);
-         listContentParents.push(rawLists[i]);
+      let uls = document.querySelectorAll<HTMLUListElement>(".vp-doc ul");
+      for (let ul of uls) {
+         allLists.push([ul, Array.from(ul.querySelectorAll("li"))]);
       }
    }
 }
@@ -108,10 +152,9 @@ onMounted(() => {
 });
 
 onBeforeUnmount(() => {
-   unscramble();
-   sectionContentParents = [];
-   sectionContent = [];
-   listContentParents = [];
-   listContent = [];
+   isScrambled.value = false;
+   all = [];
+   allLists = [];
+   parentOfAll = null;
 });
 </script>

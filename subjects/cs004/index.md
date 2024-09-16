@@ -1,6 +1,6 @@
 <FloatingButtonContainer>
    <SpoilerReveal></SpoilerReveal>
-   <Scrambler tag="h3"></Scrambler>
+   <Scrambler tag="h3" :dividers="['h2']"></Scrambler>
 </FloatingButtonContainer>
 
 # CS 004 (Networks and Communications)
@@ -397,5 +397,3 @@ called hub.
 - !![Local Area Network](#lan-local-area-network)!!
 - !![Metropolitan Area Network](#man-metropolitan-area-network)!!
 - !![Wide Area Network](#wan-wide-area-network)!!
-
----
