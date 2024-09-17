@@ -3,9 +3,7 @@
 layout: home
 
 hero:
-  name: "📚"
-  text: "Compilation of reviewers from a variety of subjects"
-  tagline: "i have no clue what to put here"
+  name: "reviwer 👍"
   actions:
     - theme: brand
       text: Subjects

@@ -30,6 +30,10 @@ export default withMermaid({
                link: "/subjects/cs201a/",
             },
             {
+               text: "CS 300 (Automata Theory and Formal Languages)",
+               link: "/subjects/cs300/",
+            },
+            {
                text: "CS 301 (Software Engineering I)",
                link: "/subjects/cs301/",
             },

@@ -19,3 +19,8 @@ h4 {
    filter: none;
    pointer-events: none;
 }
+
+.mermaid {
+   display: flex;
+   justify-content: center;
+}
