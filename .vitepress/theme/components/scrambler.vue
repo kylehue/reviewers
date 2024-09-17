@@ -16,13 +16,14 @@ import { shuffleArray } from "../utils/common";
 
 const props = withDefaults(
    defineProps<{
-      tag: keyof HTMLElementTagNameMap;
+      tag?: keyof HTMLElementTagNameMap;
       dividers?: (keyof HTMLElementTagNameMap)[];
       includeLists?: boolean;
    }>(),
    {
       includeLists: () => true,
-      dividers: () => [],
+      dividers: () => ["h2"],
+      tag: () => "h3",
    }
 );
 

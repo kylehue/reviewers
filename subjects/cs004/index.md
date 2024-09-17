@@ -1,6 +1,6 @@
 <FloatingButtonContainer>
    <SpoilerReveal></SpoilerReveal>
-   <Scrambler tag="h3" :dividers="['h2']"></Scrambler>
+   <Scrambler></Scrambler>
 </FloatingButtonContainer>
 
 # CS 004 (Networks and Communications)

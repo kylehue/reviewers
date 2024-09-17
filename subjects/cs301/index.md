@@ -1,6 +1,6 @@
 <FloatingButtonContainer>
    <SpoilerReveal></SpoilerReveal>
-   <Scrambler tag="h3"></Scrambler>
+   <Scrambler></Scrambler>
 </FloatingButtonContainer>
 
 # CS 301 (Software Engineering I)
