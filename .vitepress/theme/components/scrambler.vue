@@ -9,7 +9,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, computed, watch, onMounted, onBeforeUnmount } from "vue";
+import { ref, computed, watch, onMounted } from "vue";
 import { PhShuffle, PhRepeat } from "@phosphor-icons/vue";
 import Button from "./button.vue";
 import { shuffleArray } from "../utils/common";
@@ -93,54 +93,56 @@ function toggleScramble(doScramble: boolean) {
 }
 
 function initContent() {
-   let rawSections = Array.from(
-      document.querySelectorAll<HTMLElement>(`.vp-doc ${props.tag}`)
-   );
+   if (!all.length) {
+      let rawSections = Array.from(
+         document.querySelectorAll<HTMLElement>(`.vp-doc ${props.tag}`)
+      );
 
-   // Get all sections first
-   let undividedSections: HTMLElement[][] = [];
-   for (let i = 0; i < rawSections.length; i++) {
-      let currentGroup: HTMLElement[] = [rawSections[i]];
-      let currentEl = rawSections[i];
-      while (
-         currentEl.nextElementSibling !== null &&
-         currentEl.nextElementSibling !== rawSections[i + 1]
-      ) {
-         currentGroup.push(currentEl.nextElementSibling as HTMLElement);
-         currentEl = currentEl.nextElementSibling as HTMLElement;
+      // Get all sections first
+      let undividedSections: HTMLElement[][] = [];
+      for (let i = 0; i < rawSections.length; i++) {
+         let currentGroup: HTMLElement[] = [rawSections[i]];
+         let currentEl = rawSections[i];
+         while (
+            currentEl.nextElementSibling !== null &&
+            currentEl.nextElementSibling !== rawSections[i + 1]
+         ) {
+            currentGroup.push(currentEl.nextElementSibling as HTMLElement);
+            currentEl = currentEl.nextElementSibling as HTMLElement;
+         }
+         undividedSections.push(currentGroup);
       }
-      undividedSections.push(currentGroup);
-   }
 
-   // Then get the divided sections
-   let currentDivison: HTMLElement[][] = [];
-   let currentSection: HTMLElement[] = [];
-   for (let section of undividedSections) {
-      for (let i = 0; i < section.length; i++) {
-         let element = section[i];
+      // Then get the divided sections
+      let currentDivison: HTMLElement[][] = [];
+      let currentSection: HTMLElement[] = [];
+      for (let section of undividedSections) {
+         for (let i = 0; i < section.length; i++) {
+            let element = section[i];
 
-         // Split if element is a divider
-         if (dividers.value.has(element.tagName.toLowerCase())) {
-            currentDivison.push(currentSection);
-            all.push(currentDivison);
-            currentDivison = [];
-            currentSection = section.slice(i);
-            break;
+            // Split if element is a divider
+            if (dividers.value.has(element.tagName.toLowerCase())) {
+               currentDivison.push(currentSection);
+               all.push(currentDivison);
+               currentDivison = [];
+               currentSection = section.slice(i);
+               break;
+            }
+
+            currentSection.push(element);
          }
 
-         currentSection.push(element);
+         currentDivison.push(currentSection);
+         currentSection = [];
       }
 
-      currentDivison.push(currentSection);
-      currentSection = [];
+      if (currentDivison.length) all.push(currentDivison);
+
+      parentOfAll = all[0]?.[0]?.[0].parentElement;
    }
 
-   if (currentDivison.length) all.push(currentDivison);
-
-   parentOfAll = all[0]?.[0]?.[0].parentElement;
-
    // Lastly, get all lists
-   if (props.includeLists) {
+   if (props.includeLists && !allLists.length) {
       let uls = document.querySelectorAll<HTMLUListElement>(".vp-doc ul");
       for (let ul of uls) {
          allLists.push([ul, Array.from(ul.querySelectorAll("li"))]);
@@ -150,12 +152,5 @@ function initContent() {
 
 onMounted(() => {
    initContent();
-});
-
-onBeforeUnmount(() => {
-   isScrambled.value = false;
-   all = [];
-   allLists = [];
-   parentOfAll = null;
 });
 </script>
