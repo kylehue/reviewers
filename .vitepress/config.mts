@@ -38,6 +38,10 @@ export default withMermaid({
                link: "/subjects/cs301/",
             },
             {
+               text: "MATH 009CS (Probability and Statistics)",
+               link: "/subjects/math009cs/",
+            },
+            {
                text: "MATH 015 (Symbolic Logic)",
                link: "/subjects/math015/",
             },
