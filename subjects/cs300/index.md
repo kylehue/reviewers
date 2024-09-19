@@ -244,7 +244,7 @@ graph LR
   - The number of edges having that vertex as an endpoint.
   - Count of the number of connections of edges with that vertex.
 - !!Loop!!
-  - A graph may have an edge frome a vertex to itself, such an edge is called a !!loop!!.
+  - A graph may have an edge from a vertex to itself, such an edge is called a !!loop!!.
 - !!Adjacent Vertices!!
   - Pair of vertices that determine an edge are !!*"adjacent"*!! vertices.
 - !!Path!!
@@ -290,7 +290,7 @@ graph LR
 
 ### !!Alphabet!!
 - A finite set of symbols.
-- Each symbols is either atomic or non-divisble.
+- Each symbols is either atomic or non-divisible.
 
 ---
 
@@ -369,7 +369,7 @@ graph LR
    \end{align*}
    $$
    :::
-- Palindrome is any word $\omega$ such that $\omega = \omega^R$. One example of a palidrome is the word "racecar".
+- Palindrome is any word $\omega$ such that $\omega = \omega^R$. One example of a palindrome is the word "racecar".
 
 ---
 
@@ -388,7 +388,7 @@ graph LR
 ### !!Grammar!!
 - Describes the structure of the language.
 - Mechanism to describe the languages.
-- It is a 4-tupple $G = (V, T, S, P)$ where:
+- It is a 4-tuple $G = (V, T, S, P)$ where:
   - $V$ is the finite set of non-terminal symbols or variables.
   - $T$ is the finite set of terminal symbols.
   - $P$ is the finite set of production rules.
@@ -416,7 +416,7 @@ graph LR
 
 ### !!Derivation!!
 - A process of applying continuous substitution of production rules to obtain the desired string.
-- Has 2 possible ouputs:
+- Has 2 possible outputs:
   - !!Accepted!!
   - !!Rejected!!
 
@@ -457,9 +457,9 @@ graph LR
 ### !!Regular Expression!!
 - The notation used to represent the members of a regular language.
 - Special symbols:
-  - `*` - !!0 or more occurences!!
-  - `+` - !!1 or more occurences!!
-  - `?` - !!0 or 1 occurences!!
+  - `*` - !!0 or more occurrences!!
+  - `+` - !!1 or more occurrences!!
+  - `?` - !!0 or 1 occurrences!!
   - `[]` - !!range of characters!!
   - `()` - !!grouping of characters!!
   - `|` - !!options or alternatives used in groupings!!
@@ -490,7 +490,7 @@ graph LR
 
 ### !!Deterministic Finite Automata (DFA)!!
 - A machine capable of recognizing members of a regular language.
-- A 5-tupple $M = (Q, \Sigma, \delta, i, F)$ where:
+- A 5-tuple $M = (Q, \Sigma, \delta, i, F)$ where:
   - $Q$ is !!the finite set of possible states!!
   - $\Sigma$ is !!the finite set of input alphabet!!
   - $\delta$ is !!the program of the machine (the transition functions)!!

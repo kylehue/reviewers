@@ -672,7 +672,7 @@ graph LR
 ### !!RACI Matrix!!
 - It's a great way to define and assign these responsibilities.
 - It charts who is !!**Responsible**!!, !!**Accountable**!!, !!**Consulted**!!, !!**Informed**!! for each task.
-- Mapping this out helps to reduce confusion, destribute workload, and increase efficiency.
+- Mapping this out helps to reduce confusion, distribute workload, and increase efficiency.
 
 ---
 
@@ -697,7 +697,7 @@ graph LR
 ### !!Analysis Phase!!
 - This is where the project lifecycle begins.
 - This is where you break down the deliverables in the high-level project charter into more detailed business requirements.
-- This is where you identify the overall direaction that the project will take through the creation of the project strategy documents.
+- This is where you identify the overall direction that the project will take through the creation of the project strategy documents.
 
 ---
 
@@ -734,7 +734,7 @@ graph LR
   - Vendor quotes prices for listed products.
 - !!**RFP**!!
   - Stands for !!Request For Proposal!!.
-  - Vendor selects products that meets oyur requirements and then quotes prices.
+  - Vendor selects products that meets your requirements and then quotes prices.
 - !!**RFT**!!
   - Stands for !!Request For Information!!.
   - Less formal method that uses standard form to request information about product or service.
@@ -742,7 +742,7 @@ graph LR
 ---
 
 ### !!Mockup!!
-- Sample of input or ouptut that contains actual data.
+- Sample of input or output that contains actual data.
 
 ---
 
@@ -754,7 +754,7 @@ graph LR
 
 ### !!CASE!!
 - Stands for !!Computer-Aided Software Engineering!!.
-- Software tools designed to support activites of system development system.
+- Software tools designed to support activities of system development system.
 
 ---
 
@@ -780,7 +780,7 @@ graph LR
 ---
 
 ### !!Support Phase!!
-- Provides ongiong assistance after system is implemented.
+- Provides ongoing assistance after system is implemented.
 - Monitor system performance, identify enhancements, identify errors, conduct post-implementation system review.
 
 ---
