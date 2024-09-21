@@ -17,11 +17,12 @@ const renderedMarkdown = ref("");
 
 const renderMarkdown = () => {
    const markdownContent = getContent();
-   let dummy = document.createElement("div");
-   dummy.innerHTML = md.render(markdownContent);
-   renderedMarkdown.value = dummy.querySelector(
-      ":scope > *:first-child"
-   )!.innerHTML;
+   renderedMarkdown.value = md.render(markdownContent);
+   // let dummy = document.createElement("div");
+   // dummy.innerHTML = md.render(markdownContent);
+   // renderedMarkdown.value = dummy.querySelector(
+   //    ":scope > *:first-child"
+   // )!.innerHTML;
 };
 
 const getContent = () => {
