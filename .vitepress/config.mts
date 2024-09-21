@@ -91,7 +91,6 @@ export default withMermaid({
             },
          },
       },
-      metaChunk: true,
    }),
    mermaid: {
       theme: "base",
