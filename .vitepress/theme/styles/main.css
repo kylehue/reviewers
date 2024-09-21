@@ -5,6 +5,14 @@
   --vp-c-brand-soft: rgba(100, 255, 144, 0.14) !important; */
 }
 
+html,
+body {
+   width: 100vw;
+   height: 100vh;
+   overflow-x: hidden;
+   overflow-y: auto;
+}
+
 h4 {
    margin-top: 24px !important;
 }
@@ -23,4 +31,10 @@ h4 {
 .mermaid {
    display: flex;
    justify-content: center;
+}
+
+.katex-display {
+   width: 100%;
+   overflow-x: auto;
+   overflow-y: hidden;
 }

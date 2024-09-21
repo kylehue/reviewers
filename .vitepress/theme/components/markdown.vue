@@ -1,5 +1,5 @@
 <template>
-   <div v-html="renderedMarkdown"></div>
+   <span v-html="renderedMarkdown"></span>
 </template>
 
 <script lang="ts" setup>
@@ -17,7 +17,11 @@ const renderedMarkdown = ref("");
 
 const renderMarkdown = () => {
    const markdownContent = getContent();
-   renderedMarkdown.value = md.render(markdownContent);
+   let dummy = document.createElement("div");
+   dummy.innerHTML = md.render(markdownContent);
+   renderedMarkdown.value = dummy.querySelector(
+      ":scope > *:first-child"
+   )!.innerHTML;
 };
 
 const getContent = () => {
