@@ -17,12 +17,8 @@ const renderedMarkdown = ref("");
 
 const renderMarkdown = () => {
    const markdownContent = getContent();
-   renderedMarkdown.value = md.render(markdownContent);
-   // let dummy = document.createElement("div");
-   // dummy.innerHTML = md.render(markdownContent);
-   // renderedMarkdown.value = dummy.querySelector(
-   //    ":scope > *:first-child"
-   // )!.innerHTML;
+   let str = md.renderInline(markdownContent);
+   renderedMarkdown.value = str;
 };
 
 const getContent = () => {
