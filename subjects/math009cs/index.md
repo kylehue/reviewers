@@ -157,6 +157,23 @@ n &= \text{Size of data} \\
 \end{align*}
 $$
 
+#### Pearson's Coefficient of Skewness
+$$
+\begin{align*}
+
+\begin{align*}
+SK &= 3(\frac{\overline{x} - m}{s}) \\
+\end{align*}
+&\text{ where }
+\begin{align*}
+\overline{x} &= \text{Mean} \\
+m &= \text{Median} \\
+s &= \text{Standard Deviation} \\
+\end{align*} \\
+
+\end{align*}
+$$
+
 :::
 
 ---
@@ -434,7 +451,7 @@ SK &= 3(\frac{\overline{x} - m}{s}) \\
 &\text{ where }
 \begin{align*}
 \overline{x} &= \text{Mean} \\
-m &= \text{Mode} \\
+m &= \text{Median} \\
 s &= \text{Standard Deviation} \\
 \end{align*} \\
 
