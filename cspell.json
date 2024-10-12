@@ -45,6 +45,23 @@
       "Internetwork",
       "Radiowaves",
       "multiport",
-      "Baseband"
+      "Baseband",
+      "RACI",
+      "Boehm",
+      "Kanban",
+      "Indegree",
+      "Outdegree",
+      "Kleene",
+      "racecar",
+      "accepters",
+      "mbps",
+      "gbps",
+      "multipoint",
+      "multiplexor",
+      "demultiplexor",
+      "multitone",
+      "unitless",
+      "connectionless",
+      "datagram"
    ]
 }
